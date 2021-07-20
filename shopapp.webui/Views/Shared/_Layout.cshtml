@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="tr" />
+    <meta name="author" content="X Study" />
+    <meta name="copyright" content="X Study" />
+    <meta name="abstract" content="Yurtdışı Eğitim Danışmanlığı" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Yurtdışı Eğitim Yurtdışı Eğitim Danışmanlığı" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="X Study" />
+    <title>Yurtdışı Eğitim Danışmanlığı Yurtdışı Eğitim Programları | X Study</title>
+    <meta name="description" content="Yurdışı Eğitim Yurtdışı Eğitim Danışmanlığı Yurtdışı Eğitim Programları">
+    <meta name="keywords" content="yurtdışı, yurtdışı eğitim, yurtdışı eğitim danışmanlığı, yurtdışı eğitim programları,
+    yurtdışı eğitim ücretleri, ukrayna eğitim, ukraynada eğitim, ukrayna eğitim danışmanlığı, ukrayna eğitim programları,
+    rusya eğitim, rusyada eğitim, rusya eğitim danışmanlığı, rusya eğitim programları, belarus eğitim, belarus eğitim danışmanlığı,
+    belarus eğitim programları" />
+
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css">
+
+    
+
+</head>
+<body>
+
+    @await Html.PartialAsync("_navbar")          
+    <main class="mb-3">
+        <div class="container">     
+            @if(TempData["message"]!=null)
+            {
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-@message.AlertType">
+                            @message.Message
+                        </div>
+                    </div>
+                </div>
+            }      
+         @RenderBody()    
+        </div>
+    </main>
+
+    <div class="container">
+        @await Component.InvokeAsync("Companies")
+    </div>
+    
+
+    <footer class="py-5 bg-dark text-white text-center">
+        Copyright © Sami Karakul 2020
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    @RenderSection("Scripts",false)
+</body>
+</html>

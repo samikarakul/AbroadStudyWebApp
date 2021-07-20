@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "SLFAoaRfJObesOES7YlKsvEOxSswZn+ZlYCXZ6l7nLXvXmOSbt1BFxq3XIHixH7pdbJpPNGM+LwdGOAqnvU+ZA==",
+  "success": true,
+  "projectFilePath": "D:\\EgitimWeb_Buldum\\heyy\\userOlmadan3\\shopapp\\shopapp.entity\\shopapp.entity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

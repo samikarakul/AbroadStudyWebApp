@@ -1,0 +1,43 @@
+@model CompanyListViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="h3">Şirket Bilgilerini Düzenle</h1>
+        <hr>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td>Şirket Adı</td>
+                    <td>Şirket Numarası</td>
+                    <td>Şirket Adresi</td>
+                    <td>Şirketin Email Adresi</td>
+                    <td>Seçenekler</td>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.Companies.Count>0)
+                {
+                       @foreach (var item in Model.Companies)
+                        {
+                            <tr>
+                                <td>@item.CompanyId</td>
+                                <td>@item.CompanyName</td>  
+                                <td>@item.CompanyNumber</td>  
+                                <td>@item.CompanyAdress</td>  
+                                <td>@item.CompanyEmail</td>  
+                                <td>
+                                    <a href="/admin/companies/@item.CompanyId" class="btn btn-primary btn-sm mr-2">Düzenle</a>
+                                    
+                                </td>
+                            </tr>
+                        }
+                }else{
+                    <div class="alert alert-warning">
+                        <h3>Şirket Bilgisi yok..</h3>
+                    </div>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

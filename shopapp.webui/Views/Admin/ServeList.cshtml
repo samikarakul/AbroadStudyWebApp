@@ -1,0 +1,46 @@
+@model ServeListViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="h3">Programları Düzenle</h1>
+        <hr>
+        <a class="btn btn-primary btn-sm" href="/admin/serves/create">Program Ekle</a>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td>Program Adı</td>
+                    <td>Program Açıklama</td>
+                    <td style="width: 150px;">Fotoğraf</td>
+                    <td>Seçenekler</td>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.Serves.Count>0)
+                {
+                        @foreach (var item in Model.Serves)
+                        {
+                            <tr>
+                                <td>@item.ServeId</td>
+                                <td>@item.ServeName</td>
+                                <td>@item.ServeDescription</td>
+                                <td><img src="~/img/@item.ServeImageUrl" width="80" alt="@item.ServeName"></td>
+                                <td>
+                                    <a href="/admin/serves/@item.ServeId" class="btn btn-primary btn-sm mr-2">Düzenle</a>
+                                    
+                                    <form action="/admin/deleteserve" method="POST" style="display: inline;">
+                                        <input type="hidden" name="serveId" value="@item.ServeId">
+                                        <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                }else{
+                    <div class="alert alert-warning">
+                        <h3>Program Kayıtlı Değil..</h3>
+                    </div>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="navbar bg-danger navbar-dark navbar-expand-sm mb-3" style="position:fixed; z-index:50; width:100%;" >
+        <div class="container">
+            <a href="/" class="navbar-brand">X Study</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link willh"><i class="fas fa-bars"></i></a>
+                    <ul class="navbar-nav mr-auto dropdown">
+                        <li class="nav-item">
+                            <a href="/universiteler" class="nav-link">Üniversiteler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ulkeler" class="nav-link">Ülkeler</a>
+                        </li>        
+                        <li class="nav-item">
+                            <a href="/hakkimizda" class="nav-link">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/programlar" class="nav-link">Programlarımız</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+                @if(User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Düzenleme işlemleri</a>
+                                <ul class="navbar-nav mr-auto dropdown1">
+                                    <li class="nav-item">
+                                    <a href="/admin/products" class="nav-link">Üniversiteleri Düzenle</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/admin/categories" class="nav-link">Ülkeleri Düzenle</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/admin/companies" class="nav-link">Bilgileri Düzenle</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/admin/serves" class="nav-link">Programları Düzenle</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                        }
+            </ul>
+            <ul class="navbar-nav ml-auto">
+
+                @if(User.Identity.IsAuthenticated)
+                {
+                     <li class="nav-item">
+                        <a href="/account/logout">Çıkış Yap</a>
+                    </li>
+                } 
+                else
+                {
+                    <li class="nav-item">
+                        <a href="/account/login">Giriş Yap</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>

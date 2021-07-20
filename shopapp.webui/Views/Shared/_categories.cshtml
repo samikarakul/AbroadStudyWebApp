@@ -1,0 +1,10 @@
+ @model List<Category>
+ 
+<ul>
+    <li style="display: inline-block !important;">
+        @foreach (var category in Model)
+        {
+            <a href="#" class="">@category.Name</a>
+        }
+    </li>
+</ul>

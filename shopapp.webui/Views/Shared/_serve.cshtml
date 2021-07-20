@@ -1,0 +1,15 @@
+@model Serve
+
+<div class="card" style="padding-top:100px; border:none;">
+    <div class="row no-gutters">
+        <div class="col-sm-5">
+            <img src="~/img/@Model.ServeImageUrl" class="card-img-top" alt="@Model.ServeName eğitim yurtdışı">
+        </div>
+        <div class="col-sm-7">
+            <div class="card-body">
+                <h5 class="card-title">@Model.ServeName</h5>
+                <p class="card-text">@Model.ServeDescription</p>
+            </div>
+        </div>
+    </div>
+</div>

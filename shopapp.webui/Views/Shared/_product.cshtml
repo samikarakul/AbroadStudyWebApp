@@ -1,0 +1,14 @@
+@model Product
+
+<div class="card my-5">
+    <img class="card-img-top" src="~/img/@Model.ImageUrl" alt="@Model.Name universitesi üniversitesi eğitim"  style="height:300px;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <small class="text-muted">
+            ne yazsak ki
+        </small>
+    </div>
+    <div class="card-footer text-center" style="border:none;">
+        <a asp-controller="shop" asp-action="Details" asp-route-url="@Model.Url" class="btn btn-primary btn-sm">Detaylar</a>
+    </div>
+</div>   

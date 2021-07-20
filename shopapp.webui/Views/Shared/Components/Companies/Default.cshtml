@@ -1,0 +1,31 @@
+@model List<Company>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="row pt-5">
+            <div class="card pt-5 col-4" style="border:none;">
+                <div class="card-body commu">
+                    <div class="card-title h3">Email Adresimiz</div>
+                        <h6 id="mailId">@item.CompanyEmail </h6>
+                </div>
+            </div>
+            <div class="card pt-5 col-4 commu" style="border:none;">
+                <div class="card-body">
+                    <div class="card-title h3">Şirket Numarası</div>
+                    <h6 id="numberId">@item.CompanyNumber </h6>
+                </div>
+            </div>
+            <div class="card pt-5 col-4 commu" style="border:none;">
+                <div class="card-body">
+                    <div class="card-title h3">Adresimiz</div>
+                    <h6 id="adressId">@item.CompanyAdress </h6>
+                </div>
+            </div>
+        </div>
+        
+    }
+    
+
+    
+

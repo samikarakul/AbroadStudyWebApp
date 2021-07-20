@@ -1,0 +1,43 @@
+@model CategoryListViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="h3">Ülkeleri Düzenle</h1>
+        <hr>
+        <a class="btn btn-primary btn-sm" href="/admin/categories/create">Yeni Bir Ülke Ekle</a>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td>Ülkenin Adı</td>
+                    <td style="width: 150px;">Resim</td>
+                    <td>Seçenekler</td>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.Categories.Count>0)
+                {
+                       @foreach (var item in Model.Categories)
+                        {
+                            <tr>
+                                <td>@item.CategoryId</td>
+                                <td>@item.Name</td>  
+                                <td><img src="~/img/@item.CategoryImageUrl" width="80" alt="@item.Name eğitim  @item.Name egitim"></td>
+                                <td>
+                                    <a href="/admin/categories/@item.CategoryId" class="btn btn-primary btn-sm mr-2">Düzenle</a>
+                                    
+                                    <form action="/admin/deletecategory" method="POST" style="display: inline;">
+                                        <input type="hidden" name="categoryId" value="@item.CategoryId">
+                                        <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                    </form>
+                                </td>                        </tr>
+                        }
+                }else{
+                    <div class="alert alert-warning">
+                        <h3>Henüz Kayıtlı Ülke Yok..</h3>
+                    </div>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
